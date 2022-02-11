@@ -160,3 +160,39 @@ navbarCommunityLi.addEventListener("mouseout", ()=>{
 
 
 
+const randomNumber = () => Math.round(Math.random()*255); 
+const randomColor = () => `rgb(${randomNumber()}, ${randomNumber()}, ${randomNumber()})`;
+
+console.log(randomNumber());
+
+
+navbarCommunityLi.addEventListener("click", ()=>{
+    navbarCommunityLi.style.backgroundColor = randomColor();
+});
+
+
+
+
+let lastName = document.querySelector("input[name = last_name]");
+let charSpan = document.getElementById("charCount");
+
+
+lastName.addEventListener("keyup", ()=>{
+    charSpan.innerText = lastName.value.length + "/40";
+});
+
+
+
+let birthdayPicker = document.querySelector("[name=birthday]");
+
+birthdayPicker.addEventListener("change", ()=>{
+    console.log(birthdayPicker.value);
+    
+
+    let year = new Date().getFullYear() - new Date(birthdayPicker.value).getFullYear();
+    
+    alert("you are " + year + " years old.");
+});
+
+
+
