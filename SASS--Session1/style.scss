@@ -1,0 +1,113 @@
+@import "variables";
+@import "reset";
+@import "mixin";
+@import "article";
+
+.container{
+    padding: 0 1rem;
+}
+
+
+// Variable Usage
+
+body{
+    background-color: $bgColor ;
+    font-family: $fontFamily;
+    font-size: $fontSize;
+    color: $fontColor
+}
+
+
+// Nesting Usage
+
+nav{
+   display: flex;
+   justify-content: space-between;
+   background-color: $navBgColor; 
+
+   .brand{
+       img{
+           width: 80px;
+           border: $navBgColor;
+           border-radius: 30%;
+           padding: 10px;
+           margin: 10px;
+       }
+       
+       }
+    .navbar{
+        margin: 10px;
+        ul{
+            list-style-type: none;
+            display: flex;
+            li{
+                a{
+                    text-decoration: none;
+                    padding: 5px;
+                    color: black;
+                    font-size: $myLinkSize;
+                }
+                input{
+                    width: 60px;
+                }
+            }
+        }  
+   }
+}
+.slider {
+  display:flex;
+  justify-content: space-evenly;
+  background-color: $sliderBgColor;
+  .left {
+    margin-top: 20px;
+    button {
+      padding: 10px;
+      border-radius: 10px;
+      margin: 10px;
+      background-color: $navBgColor;
+      font-size: $myLinkSize;
+      border: 2px solid gray;
+
+      
+      &:hover {
+        background-color: pink;
+        border: 2px solid pink;
+        }
+      }
+    }
+  img {
+    width: 30%;
+    }
+  }
+
+.content{
+  .cards{
+    display: flex;
+    .card1{
+      @include myBox(brown, white);
+    }
+    .card2{
+      @include myBox(cyan, grey);
+    }
+    .card3{
+      @include myBox(blue, gray);
+    }
+    .card4{
+      @include myBox(green, white);
+    }
+  }
+}
+
+.socialBoxes{
+  display: flex;
+  @for $i from 1 through 5 {
+    .social#{$i} {
+      width: 20%;
+      height: 100px;
+      background-color: lighten(black, ($i * 10)); 
+    }
+  }
+}
+
+
+
