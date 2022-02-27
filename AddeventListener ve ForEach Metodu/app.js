@@ -81,7 +81,9 @@ loadList ();
 
 function loadList(){
     currentData = Data;
+    //console.log(currentData);
     setList(currentData);
+    //console.log(currentData);
 }
 
 function setList(result) {
@@ -154,7 +156,7 @@ function createButtons(){
     let btn3 = document.createElement("button");
 
     btn1.innerText = "breakfast";
-    btn2.innerText = "launch";
+    btn2.innerText = "lunch";
     btn3.innerText = "schakes";
 
 
@@ -175,6 +177,26 @@ function createButtons(){
 }
 
 
+let buttons = document.getElementsByTagName("button");
+
+buttonList();
+let btns = [];
+btns = buttons;
+
+buttons.addEventListener("click", ()=>{
+    btns.forEach(item => {
 
 
+        
+    });
+})
 
+
+buttonList (){
+    btns.forEach(item => {
+        for (let i = 0; i < btns.length; i++) {
+            const item. = btns[i];
+            
+        }
+    })
+};
